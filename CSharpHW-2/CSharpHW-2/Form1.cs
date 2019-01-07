@@ -10,6 +10,7 @@ namespace CSharpHW_2
         public Form1()
         {
             InitializeComponent();
+            //click button for check ID in text-box is create in city?
             Check.Click += async (sender, e) =>
             {
                 IEnumerable<string> list = Util.ReadF(ID.Text);
