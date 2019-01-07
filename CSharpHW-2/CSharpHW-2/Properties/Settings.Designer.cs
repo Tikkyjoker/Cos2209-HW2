@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSharpHW2.Properties
+namespace CSharpHW_2.Properties
 {
 
 

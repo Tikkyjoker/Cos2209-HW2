@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSharpHW2
+namespace CSharpHW_2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace CSharpHW2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainPage());
+            Application.Run(new Form1());
         }
     }
 }
