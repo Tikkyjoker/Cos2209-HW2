@@ -25,9 +25,9 @@ namespace CSharpHW_2
 
                 return Verify(IDtext).ToString() == IDtext.Substring(12, 1);
             }
-            catch (FormatException)
+            catch (FormatException err) 
             {
-                MessageBox.Show("Please input Number Only");
+                MessageBox.Show(err.Message);
             }
             catch (IndexOutOfRangeException err)
             {
