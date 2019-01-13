@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace CSharpHW_2
 {
     public class Util
     {
+        static Encoding utf8 = Encoding.UTF8;
         //check string input is all number and have 13 character and verify ID is right
         internal static bool Checks(string IDtext)
         {
@@ -41,7 +43,7 @@ namespace CSharpHW_2
         // read file csv and compare string input have in data?
         internal static IEnumerable<string> ReadF(string ID)
         {
-            var lists = File.ReadAllLines(@"C:\Users\kanok\Documents\test.csv").Select(a => a.Split(','));
+            var lists = File.ReadAllLines(@"C:\Users\kanok\Documents\listname.csv", Encoding.GetEncoding(874)).Select(a => a.Split(','));
             var list = (from str in lists select (from col in str select col).ToArray()).Skip(1).ToArray();
             if (Checks(ID))
             {
@@ -49,9 +51,10 @@ namespace CSharpHW_2
                 {
                     if (ID.Substring(1, 4) == text[0])
                     {
-                        yield return text[2];
+                        MessageBox.Show(text[1]+text[3]);
+                        yield return text[1];
                         yield return text[3];
-                        yield break;
+                        break;
                     }
                 }
             }

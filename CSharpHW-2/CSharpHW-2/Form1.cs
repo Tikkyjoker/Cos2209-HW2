@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace CSharpHW_2
@@ -16,11 +17,10 @@ namespace CSharpHW_2
                 IEnumerable<string> list = Util.ReadF(ID.Text);
                 try
                 {
-
                     if (list.Any())
                     {
                         //await ExampleDelayAsync();
-                        MessageBox.Show($@"your are born in '{list.ElementAt(0)} ,{list.ElementAt(1)}'");
+                        MessageBox.Show($"your are born in '{list.ElementAt(0)} ,{list.ElementAt(1)}'");
                     }
                     else
                     {
