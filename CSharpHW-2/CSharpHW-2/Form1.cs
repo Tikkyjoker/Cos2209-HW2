@@ -12,15 +12,16 @@ namespace CSharpHW_2
         {
             InitializeComponent();
             //click button for check ID in text-box is create in city?
-            Check.Click += async (sender, e) =>
+            Check.Click += (sender, args) =>
             {
                 IEnumerable<string> list = Util.ReadF(ID.Text);
                 try
                 {
-                    if (list.Any())
+                    var enumerable = list as string[] ?? list.ToArray();
+                    if (enumerable.Any())
                     {
                         //await ExampleDelayAsync();
-                        MessageBox.Show($"your are born in '{list.ElementAt(0)} ,{list.ElementAt(1)}'");
+                        MessageBox.Show($@"your are born in '{enumerable.ElementAt(0)} ,{enumerable.ElementAt(1)}'");
                     }
                     else
                     {

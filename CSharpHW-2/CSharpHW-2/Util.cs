@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
@@ -45,14 +46,12 @@ namespace CSharpHW_2
         {
             var lists = File.ReadAllLines(@"C:\Users\kanok\Documents\listname.csv", Encoding.GetEncoding(874)).Select(a => a.Split(','));
             var list = (from str in lists select (from col in str select col).ToArray()).Skip(1).ToArray();
-
             if (Checks(ID))
             {
                 foreach (var text in list)
                 {
                     if (ID.Substring(1, 4) == text[0])
                     {
-                        MessageBox.Show(text[1]+text[3]);
                         yield return text[1];
                         yield return text[3];
                         break;
