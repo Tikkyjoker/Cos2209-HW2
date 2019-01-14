@@ -25,7 +25,7 @@ namespace CSharpHW_2
                     }
                     else
                     {
-                        throw new ArgumentOutOfRangeException(@"ID card verification error.");
+                        throw new ArgumentOutOfRangeException($"ID card verification error.");
                     }
                 }
                 catch (ArgumentOutOfRangeException err)

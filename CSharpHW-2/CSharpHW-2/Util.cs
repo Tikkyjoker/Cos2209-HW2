@@ -21,7 +21,7 @@ namespace CSharpHW_2
                     throw new IndexOutOfRangeException("Please input 13 number");
                 }
 
-                if (IDtext.All(Char.IsLetter))
+                if (!IDtext.All(Char.IsNumber))
                 {
                     throw new FormatException("Please input Number Only");
                 }
