@@ -14,7 +14,7 @@ namespace CSharpHW_2
             //click button for check ID in text-box is create in city?
             Check.Click += (sender, args) =>
             {
-                IEnumerable<string> list = Util.ReadF(ID.Text);
+                var list = Util.ReadF(ID.Text);
                 try
                 {
                     var enumerable = list as string[] ?? list.ToArray();
