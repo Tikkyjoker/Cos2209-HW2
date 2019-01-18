@@ -42,7 +42,7 @@ namespace CSharpHW_2
         // read file csv and compare string input have in data?
         internal static IEnumerable<string> ReadF(string ID)
         {
-            var lists = File.ReadAllLines(@"C:\Users\kanok\Documents\listname.csv", Encoding.GetEncoding(874)).Select(a => a.Split(','));
+            var lists = File.ReadAllLines(@"listname.csv", Encoding.GetEncoding(874)).Select(a => a.Split(','));
             var list = (from str in lists select (from col in str select col).ToArray()).Skip(1).ToArray();
             if (!Checks(ID)) yield break;
             foreach (var text in list)
